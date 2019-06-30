@@ -87,7 +87,7 @@
                 <label for="password">Password</label>
             </div>
 
-            <div class="error">
+            <div class="error <?php if($error) echo "show" ?>">
                 <div class="error_message"><?php echo $error ?></div>
             </div>
 

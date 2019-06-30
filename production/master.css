@@ -96,11 +96,15 @@ div.login {
   */
 }
 div.login .error {
+  display: none;
   padding: 15px;
   margin: 5px 0;
   background: #F00;
   color: white;
   border-radius: 8px;
+}
+div.login .error.show {
+  display: block;
 }
 div.login form {
   margin: 2em 0;
@@ -160,6 +164,7 @@ footer {
   text-align: center;
 }
 footer ul {
+  padding-bottom: 20px;
   list-style: none;
 }
 footer ul li {
