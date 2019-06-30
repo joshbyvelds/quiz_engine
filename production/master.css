@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  text-align: center;
+}
+header h1 {
+  font-size: 80px;
+}
+header h3 {
+  font-size: 45px;
+}
+
+div.login {
+  max-width: 1024px;
+  padding: 0 30px;
+  margin: 0 auto;
+  /**
+  * Make the field a flex-container, reverse the order so label is on top.
+  */
+  /**
+  * Add a transition to the label and input.
+  * I'm not even sure that touch-action: manipulation works on
+  * inputs, but hey, it's new and cool and could remove the
+  * pesky delay.
+  */
+  /**
+  * Translate down and scale the label up to cover the placeholder,
+  * when following an input (with placeholder-shown support).
+  * Also make sure the label is only on one row, at max 2/3rds of the
+  * field—to make sure it scales properly and doesn't wrap.
+  */
+  /**
+  * By default, the placeholder should be transparent. Also, it should
+  * inherit the transition.
+  */
+  /**
+  * Show the placeholder when the input is focused.
+  */
+  /**
+  * When the element is focused, remove the label transform.
+  * Also, do this when the placeholder is _not_ shown, i.e. when
+  * there's something in the input at all.
+  */
+}
+div.login .error {
+  padding: 15px;
+  margin: 5px 0;
+  background: #F00;
+  color: white;
+  border-radius: 8px;
+}
+div.login form {
+  margin: 2em 0;
+}
+div.login .field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+div.login label, div.login input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+div.login input {
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+}
+div.login input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+div.login label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+div.login input:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 1.7rem) scale(1.5);
+}
+div.login ::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+div.login input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+div.login input:not(:placeholder-shown) + label,
+div.login input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+footer {
+  padding-top: 30px;
+  border-top: dashed 1px #000;
+  text-align: center;
+}
+footer ul {
+  list-style: none;
+}
+footer ul li {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=master.css.map */
