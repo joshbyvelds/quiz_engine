@@ -158,6 +158,23 @@ div.login input:focus + label {
   cursor: pointer;
 }
 
+.menu {
+  padding-top: 50px;
+  text-align: center;
+}
+.menu h2 {
+  padding-bottom: 40px;
+  font-size: 60px;
+}
+.menu button {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: 40px;
+  margin: 5px auto;
+  line-height: 40px;
+}
+
 footer {
   padding-top: 30px;
   border-top: dashed 1px #000;

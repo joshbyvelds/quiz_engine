@@ -4,7 +4,7 @@ session_start();
 
 // check if user is logged in?
 $loggedIn = isset($_SESSION['username']);
-$username = "";
+$username = $_SESSION['username'];
 
 //if user is not logged in, boot em out and show them the login page
 if(!$loggedIn){
@@ -27,7 +27,15 @@ if(!$loggedIn){
     <header>
         <h1>Quiz Engine</h1>
     </header>
-    <main></main>
+    <main>
+        <div class="menu">
+            <h2>Welcome, <?php echo $username ?></h2>
+
+            <button>Mode 1 - Learning</button>
+            <button>Mode 2 - Wrong Answer Improvement</button>
+            <button>Mode 3 - Practice</button>
+        </div>
+    </main>
     <footer>
         <ul>
             <li><a href="/Logout">Logout</a></li>
