@@ -1,4 +1,8 @@
 .quiz_ui{
+    display: none;
+    padding-top: 50px;
+    text-align: center;
+
     .counter{
 
     }
@@ -12,6 +16,7 @@
     }
 
     .feedback {
+        display: none;
         .icon{
 
         }

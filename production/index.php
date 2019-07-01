@@ -28,12 +28,12 @@ if(!$loggedIn){
         <h1>Quiz Engine</h1>
     </header>
     <main>
-        <div class="menu">
+        <div class="menu" id="menu">
             <h2>Welcome, <?php echo $username ?></h2>
 
             <button class="game_start_btn" data-mode="1">Mode 1 - Learning</button>
-            <button class="game_start_btn" data-mode="2">Mode 2 - Wrong Answer Improvement</button>
-            <button class="game_start_btn" data-mode="3">Mode 3 - Practice</button>
+            <button class="game_start_btn" data-mode="2" disabled>Mode 2 - Wrong Answer Improvement</button>
+            <button class="game_start_btn" data-mode="3" disabled>Mode 3 - Practice</button>
             <button class="stats_btn">Show Stats</button>
         </div>
 
@@ -53,7 +53,7 @@ if(!$loggedIn){
         </div>
 
         <div class="results_ui" id="results">
-            <div class="percent"></div>
+            <div class="percent" id="result_percent"></div>
 
             <div class="correct_text">
                 You got <span id="result_correct"></span> out of <span id="result_total"></span>
@@ -71,6 +71,7 @@ if(!$loggedIn){
         <p>&copy; 2019 - Byvelds Multimedia</p>
     </footer>
     <script src="jquery.min.js"></script>
+    <script src="questions.min.js?version=0"></script>
     <script src="master.min.js"></script>
 </body>
 </html>

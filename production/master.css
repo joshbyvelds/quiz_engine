@@ -175,6 +175,18 @@ div.login input:focus + label {
   line-height: 40px;
 }
 
+.quiz_ui {
+  display: none;
+  padding-top: 50px;
+  text-align: center;
+}
+.quiz_ui .feedback {
+  display: none;
+}
+.results_ui {
+  display: none;
+  text-align: center;
+}
 footer {
   padding-top: 30px;
   border-top: dashed 1px #000;
