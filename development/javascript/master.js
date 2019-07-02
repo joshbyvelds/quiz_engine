@@ -9,7 +9,7 @@
 
     function reset(){
         questions_correct = 0;
-        available_questions = questions;
+        available_questions = questions.slice(0);
         current_question_counter = 0;
     }
 
