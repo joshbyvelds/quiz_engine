@@ -37,6 +37,16 @@ for stats, we want to track
 
 ID | User | Question | Answer 1 | Answer 2 | Answer 3 | Answer 4 | times answered | correct | wrong
 
+## Design Inspration
+
+https://dribbble.com/shots/6670080-Quiz-App
+
+https://dribbble.com/shots/6183472-Quiz-App-Design-Idea
+
+https://dribbble.com/shots/5437629-Quizbuzz-App-Design-Sneak-Peek
+
+https://dribbble.com/shots/6508352-Quiz-App-UI-Oma
+
 
 
 

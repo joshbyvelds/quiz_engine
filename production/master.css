@@ -200,4 +200,14 @@ footer ul li {
   display: inline-block;
 }
 
+.theme_dark {
+  background: #000;
+  color: white;
+}
+
+.theme_light {
+  background: #fff;
+  color: black;
+}
+
 /*# sourceMappingURL=master.css.map */

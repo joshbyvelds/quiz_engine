@@ -11,6 +11,19 @@ if(!$loggedIn){
     header("Location: /login");
 }
 
+// check what theme is saved..
+if(!isset($_COOKIE['theme'])){
+    setcookie("theme", "light", 0, "/");
+    $theme = "light";
+}else{
+    if(isset($_GET["theme"])){
+        setcookie("theme", $_GET["theme"], 0, "/");
+        $theme = $_GET["theme"];
+    }else{
+        $theme = $_COOKIE['theme'];
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -23,7 +36,7 @@ if(!$loggedIn){
     <title>Quiz Engine</title>
     <link rel="stylesheet" href="master.css">
 </head>
-<body>
+<body class="theme_<?php echo $theme ?>">
     <header>
         <h1>Quiz Engine</h1>
     </header>
@@ -66,6 +79,7 @@ if(!$loggedIn){
 
     <footer>
         <ul>
+            <li><?php if($theme === "light"){echo "<a href=\"/?theme=dark\">Dark Mode</a>";}else{echo "<a href=\"/?theme=light\">Light Mode</a>";} ?></li>
             <li><a href="/Logout">Logout</a></li>
         </ul>
         <p>&copy; 2019 - Byvelds Multimedia</p>
