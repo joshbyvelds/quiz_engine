@@ -1,22 +1,60 @@
 .quiz_ui{
     display: none;
-    padding-top: 50px;
+    padding: 20px 10px 20px;
     text-align: center;
 
     .counter{
-
+        padding-bottom: 16px;
+        font-size: 32px;
     }
 
     .question_text{
-
+        font-size: 21px;
+        padding-bottom: 10px;
     }
 
     button.answer{
+        display: block;
+        width: 100%;
+        min-height: 50px;
+        border: 0;
+        margin: 5px 0;
+        padding: 16px 0;
+        background-color: #00c5ff;
+        border-radius: 16px;
+        font-size: 16px;
+
+        &.correct{
+            background-color: #00AA00;
+        }
+
+        &.wrong{
+            background-color: #AA0000;
+            text-decoration: line-through;
+        }
+
+        &:hover{
+            //border: solid 2px #00a6ff;
+        }
 
     }
 
+    button.next{
+        display: block;
+        width: 100%;
+        min-height: 50px;
+        border: 0;
+        margin: 5px 0;
+        padding: 16px 0;
+        background-color: #f59bff;
+        font-size: 16px;
+        border-radius: 16px;
+    }
+
     .feedback {
+        padding: 20px 0;
         display: none;
+
         .icon{
 
         }
@@ -24,6 +62,8 @@
         .text{
 
         }
+
+
     }
 }
 

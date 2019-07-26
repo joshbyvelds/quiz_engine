@@ -48,7 +48,7 @@
             loadQuiz($(this).attr("data-mode"));
         });
 
-        $("#stats_btn").off().on("click", function(){showStats();});
+        $(".stats_btn").off().on("click", function(){showStats();});
     }
 
     function loadQuestion(){
@@ -61,7 +61,7 @@
         }
 
         // hide feedback from previous question..
-        $("#feedback").hide();
+        $("#feedback, #next_btn").hide();
 
         // get random question
         current_question = getRandomQuestion();
@@ -69,13 +69,15 @@
         // add question text to quiz UI
         $("#question_text").html(current_question.Question);
 
+        $(".answer").hide();
+
         // add answer text to each button
-        for (var i = current_question.Answers.length; i >= 0; i--){
-            $("#answer" + (i + 1)).attr("data-answer-id", i).html(current_question.Answers[i]);
+        for (var i = 0; i < current_question.Answers.length; i++){
+            $("#answer" + (i + 1)).attr("data-answer-id", i).html(current_question.Answers[i]).show();
         }
 
         // shuffle the buttons
-        $(".answer").removeAttr("disabled","disabled").css("opacity", 1).shuffle().off().on('click', function(){checkAnswer($(this));});
+        $(".answer").removeClass("correct").removeClass("wrong").removeAttr("disabled","disabled").css("opacity", 1).shuffle().off().on('click', function(){checkAnswer($(this));});
 
         // update question counter..
         current_question_counter++;
@@ -102,30 +104,29 @@
                 $("#feedback_text").html("Correct, Nice work");
                 $("#feedback").addClass("correct");
 
-                // play animation, then go to next question..
-                setTimeout(function () {
-                    loadQuestion();
-                }, 1000);
+                $(btn).addClass("correct");
+
+                $("#next_btn").show().off().on("click", loadQuestion);
+
             } else {
 
                 // update game ui to show "incorrect" state
-                $(btn).attr("disabled", "disabled").css("opacity", 0.3);
-                $("#feedback_text").html("Incorrect, Please try again");
                 $("#feedback").addClass("incorrect");
+
+                $(btn).addClass("wrong");
 
                 // check if user can answer again.. only on mode one
                 if (!second_chance) {
                     second_chance = true;
+                    $("#feedback_text").html("Incorrect, Please try again");
+                    $(btn).attr("disabled", "disabled");
                     $(".answer").off().on('click', function () {
                         checkAnswer($(this));
                     });
                     $(btn).off();
                 } else {
-
-                    // play animation, then go to next question..
-                    setTimeout(function () {
-                        loadQuestion();
-                    }, 1000);
+                    $("#feedback_text").html("Incorrect");
+                    $("#next_btn").show().off().on("click", loadQuestion);
                 }
             }
 
@@ -169,7 +170,8 @@
     }
 
     function showStats(){
-        alert("Show Stats");
+        $("#menu").hide();
+        $("#stats").show();
     }
 
     function init(){

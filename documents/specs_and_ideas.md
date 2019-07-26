@@ -20,7 +20,7 @@ those questions.
 
 The user will go though and answer every question they can, like a real test. only once the user clicks
 finished at the bottom of the test will the answers be checked. Once the quiz is complete, show the 
-results.
+results. it will feature 20 questions, and have a 30 minute time limit.
 
 
 ## Stats ##

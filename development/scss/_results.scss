@@ -1,16 +1,24 @@
 .results_ui{
     display: none;
+    padding-top: 40px;
     text-align: center;
     
     .percent{
-
+        padding-bottom: 20px;
+        font-size: 80px;
     }
 
     .correct_text {
-
+        padding: 20px 0;
+        font-size: 32px;
     }
 
     button{
-
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        height: 40px;
+        margin: 5px auto;
+        line-height: 40px;
     }
 }

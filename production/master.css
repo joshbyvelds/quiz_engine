@@ -53,14 +53,30 @@ table {
   border-spacing: 0;
 }
 
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+.wrapper {
+  max-width: 360px;
+  margin: 0 auto;
+  border: solid 1px black;
+}
+
+h1 {
+  font-size: 75px;
+  text-align: center;
+}
+
 header {
   text-align: center;
 }
 header h1 {
-  font-size: 80px;
+  font-size: 50px;
 }
 header h3 {
-  font-size: 45px;
+  font-size: 32px;
 }
 
 div.login {
@@ -159,12 +175,12 @@ div.login input:focus + label {
 }
 
 .menu {
-  padding-top: 50px;
+  padding-top: 20px;
   text-align: center;
 }
 .menu h2 {
   padding-bottom: 40px;
-  font-size: 60px;
+  font-size: 32px;
 }
 .menu button {
   display: block;
@@ -177,18 +193,81 @@ div.login input:focus + label {
 
 .quiz_ui {
   display: none;
-  padding-top: 50px;
+  padding: 20px 10px 20px;
   text-align: center;
 }
+.quiz_ui .counter {
+  padding-bottom: 16px;
+  font-size: 32px;
+}
+.quiz_ui .question_text {
+  font-size: 21px;
+  padding-bottom: 10px;
+}
+.quiz_ui button.answer {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  border: 0;
+  margin: 5px 0;
+  padding: 16px 0;
+  background-color: #00c5ff;
+  border-radius: 16px;
+  font-size: 16px;
+}
+.quiz_ui button.answer.correct {
+  background-color: #00AA00;
+}
+.quiz_ui button.answer.wrong {
+  background-color: #AA0000;
+  text-decoration: line-through;
+}
+.quiz_ui button.next {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  border: 0;
+  margin: 5px 0;
+  padding: 16px 0;
+  background-color: #f59bff;
+  font-size: 16px;
+  border-radius: 16px;
+}
 .quiz_ui .feedback {
+  padding: 20px 0;
   display: none;
 }
 .results_ui {
   display: none;
+  padding-top: 40px;
   text-align: center;
 }
+.results_ui .percent {
+  padding-bottom: 20px;
+  font-size: 80px;
+}
+.results_ui .correct_text {
+  padding: 20px 0;
+  font-size: 32px;
+}
+.results_ui button {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: 40px;
+  margin: 5px auto;
+  line-height: 40px;
+}
+
+.stats_wrapper {
+  display: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 footer {
   padding-top: 30px;
+  padding: 16px;
   border-top: dashed 1px #000;
   text-align: center;
 }
