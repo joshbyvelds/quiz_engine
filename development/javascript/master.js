@@ -3,14 +3,24 @@
     var available_questions;
     var question_max = 0;
     var question_max_worst = 10;
+    var question_max_practice = 30;
     var current_question_counter;
     var second_chance;
     var questions_correct;
     var current_mode;
 
     var question_max_internal;
+    var minutes = 30;
+    var seconds = 0;
+
+    var showFeedback = true;
 
     function reset(){
+        $("#timer").hide();
+        $("#minutes").html("00");
+        $("#seconds").html("00");
+        minutes = 30;
+        seconds = 0;
         questions_correct = 0;
         available_questions = questions.slice(0);
         current_question_counter = 0;
@@ -105,32 +115,37 @@
                     questions_correct += 10;
                 }
                 // update game ui to show "correct" state
-                $("#feedback_text").html("Correct, Nice work");
-                $("#feedback").addClass("correct");
+                if(showFeedback) {
+                    $("#feedback_text").html("Correct, Nice work");
+                    $("#feedback").addClass("correct");
 
-                $(btn).addClass("correct");
+                    $(btn).addClass("correct");
+                }
 
                 $("#next_btn").show().off().on("click", loadQuestion);
 
             } else {
-
-                // update game ui to show "incorrect" state
-                $("#feedback").addClass("incorrect");
-
-                $(btn).addClass("wrong");
-
                 // check if user can answer again.. only on mode one
-                if (!second_chance) {
-                    second_chance = true;
-                    $("#feedback_text").html("Incorrect, Please try again");
-                    $(btn).attr("disabled", "disabled");
-                    $(".answer").off().on('click', function () {
-                        checkAnswer($(this));
-                    });
-                    $(btn).off();
-                } else {
-                    $("#feedback_text").html("The correct answer has the dark green background.");
-                    $(".answer[data-answer-id="+ correct +"]").addClass("show_correct");
+                if(showFeedback) {
+
+                    // update game ui to show "incorrect" state
+                    $("#feedback").addClass("incorrect");
+                    $(btn).addClass("wrong");
+
+                    if (!second_chance) {
+                        second_chance = true;
+                        $("#feedback_text").html("Incorrect, Please try again");
+                        $(btn).attr("disabled", "disabled");
+                        $(".answer").off().on('click', function () {
+                            checkAnswer($(this));
+                        });
+                        $(btn).off();
+                    } else {
+                        $("#feedback_text").html("The correct answer has the dark green background.");
+                        $(".answer[data-answer-id=" + correct + "]").addClass("show_correct");
+                        $("#next_btn").show().off().on("click", loadQuestion);
+                    }
+                }else{
                     $("#next_btn").show().off().on("click", loadQuestion);
                 }
             }
@@ -140,13 +155,37 @@
         });
     }
 
+
     function loadModeOne() {
         reset();
         $("#menu").hide();
         $("#quiz").show();
         $("#question_total").text(question_max_internal);
 
+        showFeedback = true;
+
         loadQuestion();
+    }
+
+    function timerCountdown(){
+        setTimeout(function(){
+            if(minutes === 0 && seconds === 0){
+                showFinalResults();
+                return;
+            }
+
+            if(seconds === 0){
+                seconds = 60;
+                minutes--;
+            }
+            seconds--;
+
+            $("#minutes").html((minutes < 10) ? ("0" + minutes) : (minutes));
+            $("#seconds").html((seconds < 10) ? ("0" + seconds) : (seconds));
+
+            timerCountdown();
+
+        }, 1000);
     }
 
     function loadModeTwo(){
@@ -181,6 +220,8 @@
                 $("#quiz").show();
                 $("#question_total").text(question_max_internal);
 
+                showFeedback = true;
+
                 // Start Game..
                 loadQuestion();
             }
@@ -188,6 +229,23 @@
     }
 
     function loadModeThree(){
+        reset();
+
+        // setup Timer
+        $("#timer").show();
+        $("#minutes").html("30");
+
+        // Setup Game UI and Hide Menu..
+        question_max_internal = (questions.length >= question_max_practice) ? question_max_practice : questions.length;
+        $("#menu").hide();
+        $("#quiz").show();
+        $("#question_total").text(question_max_internal);
+
+        showFeedback = false;
+
+        // Start Game..
+        timerCountdown();
+        loadQuestion();
     }
 
     function loadQuiz(mode){
