@@ -2,6 +2,7 @@
     var questions = QUESTIONS;
     var available_questions;
     var question_max = 0;
+    var question_max_worst = 10;
     var current_question_counter;
     var second_chance;
     var questions_correct;
@@ -150,7 +151,40 @@
 
     function loadModeTwo(){
         // get question id's with the worst results..
-        //$.post("/post.php", {"key":"worst"}, function(j){});
+        reset();
+
+        $.post("/post.php", {"key":"stats"}, function(j){
+            var worst = [];
+            if(j){
+
+                // Get stats from DB..
+                json = JSON.parse(j);
+                json.forEach(function (element) {
+                    worst.push({"question_id":element.question, "percent":round((parseInt(element.correct) / (parseInt(element.correct) + parseInt(element.incorrect)) * 100), 2)})
+                });
+
+                // Sort questions based of how often the user has gotten it wrong over if they got it correct..
+                worst.sort(function(a, b) {return a.percent - b.percent;});
+                worst = worst.splice(0,question_max_worst);
+
+                // Set total amount of questions..
+                question_max_internal = (questions.length >= question_max_worst) ? question_max_worst : questions.length;
+
+                // Add worst questions to game question array..
+                available_questions = [];
+                worst.forEach(function(element){
+                    available_questions.push(questions[element.question_id]);
+                });
+
+                // Hide Menu and show Game..
+                $("#menu").hide();
+                $("#quiz").show();
+                $("#question_total").text(question_max_internal);
+
+                // Start Game..
+                loadQuestion();
+            }
+        });
     }
 
     function loadModeThree(){

@@ -46,7 +46,7 @@ if(!isset($_COOKIE['theme'])){
                 <h2>Welcome, <?php echo ucfirst($username) ?></h2>
 
                 <button class="game_start_btn" data-mode="1">Mode 1 - Learning</button>
-                <button class="game_start_btn" data-mode="2" disabled>Mode 2 - Wrong Answer Improvement</button>
+                <button class="game_start_btn" data-mode="2">Mode 2 - Wrong Answer Improvement</button>
                 <button class="game_start_btn" data-mode="3" disabled>Mode 3 - Practice</button>
                 <button class="stats_btn">Show Stats</button>
             </div>
