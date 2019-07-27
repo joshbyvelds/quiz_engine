@@ -261,6 +261,37 @@ div.login input:focus + label {
   padding: 20px 0;
   font-size: 32px;
 }
+.results_ui .time {
+  padding: 10px 10px;
+  font-size: 32px;
+}
+.results_ui .time h2 {
+  padding-bottom: 10px;
+  color: #1b7920;
+  font-size: 28px;
+  font-weight: 800;
+}
+.results_ui .wrong {
+  padding: 10px 10px;
+}
+.results_ui .wrong h2 {
+  padding-bottom: 10px;
+  color: red;
+  font-size: 28px;
+  font-weight: 800;
+}
+.results_ui .wrong ul {
+  list-style: none;
+  text-align: center;
+}
+.results_ui .wrong ul li {
+  padding-bottom: 15px;
+}
+.results_ui .wrong ul strong {
+  padding-bottom: 5px;
+  display: block;
+  font-weight: 700;
+}
 .results_ui button {
   display: block;
   width: 100%;

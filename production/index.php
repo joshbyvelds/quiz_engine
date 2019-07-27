@@ -75,6 +75,18 @@ if(!isset($_COOKIE['theme'])){
                     You got <span id="result_correct"></span> out of <span id="result_total"></span>
                 </div>
 
+                <div class="time" id="result_time">
+                    <h2>Completed In</h2>
+                    <span id="results_minutes">00</span>:<span id="results_seconds">00</span>
+                </div>
+
+                <div class="wrong" id="results_wrong">
+                    <h2>Wrong Answers</h2>
+                    <ul>
+
+                    </ul>
+                </div>
+
                 <button id="result_play_again">Play Again</button>
                 <button id="result_menu">Back to Menu</button>
             </div>

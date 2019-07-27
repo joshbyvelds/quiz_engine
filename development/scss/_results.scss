@@ -13,6 +13,44 @@
         font-size: 32px;
     }
 
+    .time{
+        padding: 10px 10px;
+        font-size: 32px;
+
+        h2{
+            padding-bottom: 10px;
+            color: #1b7920;
+            font-size: 28px;
+            font-weight: 800;
+        }
+    }
+
+    .wrong{
+        padding: 10px 10px;
+
+        h2{
+            padding-bottom: 10px;
+            color: red;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        ul{
+            list-style: none;
+            text-align: center;
+
+            li{
+                padding-bottom: 15px;
+            }
+
+            strong{
+                padding-bottom: 5px;
+                display: block;
+                font-weight: 700;
+            }
+        }
+    }
+
     button{
         display: block;
         width: 100%;

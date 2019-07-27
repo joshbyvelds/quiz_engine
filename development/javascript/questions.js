@@ -118,7 +118,7 @@ var QUESTIONS = [
             "Mobility right and the rule of law",
             "The supremacy of law and the rule of God",
         ],
-        "Correct": 2,
+        "Correct": 1,
     },
 
     {

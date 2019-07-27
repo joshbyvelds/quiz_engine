@@ -10,21 +10,22 @@
     var current_mode;
 
     var question_max_internal;
-    var minutes = 30;
-    var seconds = 0;
+    var seconds = 30 * 60;
 
     var showFeedback = true;
+    var wrong;
+    var cancelTimer;
 
     function reset(){
         $("#timer").hide();
         $("#minutes").html("00");
         $("#seconds").html("00");
-        minutes = 30;
-        seconds = 0;
+        seconds = 30 * 60;
         questions_correct = 0;
         available_questions = questions.slice(0);
         current_question_counter = 0;
         question_max_internal = (question_max === 0) ? available_questions.length : question_max;
+        wrong = [];
     }
 
     function showFinalResults(){
@@ -32,6 +33,21 @@
         $("#result_correct").text(Number.parseFloat(questions_correct / 10).toFixed(1));
         $("#result_total").text(question_max_internal);
         $("#result_percent").text(round(((questions_correct / 10) / question_max_internal) * 100, 2) + "%");
+
+        wrong.forEach(function(element){
+            $("#results_wrong ul").append("<li><strong>"+ questions[element].Question +"</strong>"+ questions[element].Answers[questions[element].Correct] +"</li>")
+        });
+
+        cancelTimer = true;
+        if(!showFeedback) {
+            $("#result_time").show();
+            var r_minutes = Math.floor(((30 * 60) - seconds) / 60);
+            var r_seconds = ((30 * 60) - seconds) % 60;
+            $("#results_minutes").html((r_minutes < 10) ? "0" + r_minutes : r_minutes);
+            $("#results_seconds").html((r_seconds < 10) ? "0" + r_seconds : r_seconds);
+        }else{
+            $("#result_time").hide();
+        }
 
         // add events to results buttons..
         $("#result_play_again").off().on("click", function(){
@@ -144,6 +160,7 @@
                             checkAnswer($(this));
                         });
                         $(btn).off();
+                        wrong.push(current_question.ID);
                     } else {
                         $("#feedback_text").html("The correct answer has the dark green background.");
                         $(".answer[data-answer-id=" + correct + "]").addClass("show_correct");
@@ -151,6 +168,7 @@
                     }
                 }else{
                     $("#next_btn").show().off().on("click", loadQuestion);
+                    wrong.push(current_question.ID)
                 }
             }
 
@@ -173,19 +191,20 @@
 
     function timerCountdown(){
         setTimeout(function(){
-            if(minutes === 0 && seconds === 0){
+            if(seconds === 0){
                 showFinalResults();
                 return;
             }
 
-            if(seconds === 0){
-                seconds = 60;
-                minutes--;
-            }
+            if(cancelTimer === true)
+                true;
+
             seconds--;
+            var minutes = Math.floor(seconds / 60);
+            var seconds_split = seconds % 60;
 
             $("#minutes").html((minutes < 10) ? ("0" + minutes) : (minutes));
-            $("#seconds").html((seconds < 10) ? ("0" + seconds) : (seconds));
+            $("#seconds").html((seconds_split < 10) ? ("0" + seconds_split) : (seconds_split));
 
             timerCountdown();
 
@@ -248,6 +267,7 @@
         showFeedback = false;
 
         // Start Game..
+        cancelTimer = false;
         timerCountdown();
         loadQuestion();
     }
