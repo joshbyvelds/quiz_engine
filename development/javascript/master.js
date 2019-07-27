@@ -176,6 +176,39 @@
     function showStats(){
         $("#menu").hide();
         $("#stats").show();
+
+        $("#stats_back").off().on('click', closeStats);
+        $.post("/post.php", {key:"stats"}, function(j){
+            var json;
+            var correct = 0;
+            var total = 0;
+            var top_cat = "N/A";
+            var worst_cat = "N/A";
+
+            if(j){
+                json = JSON.parse(j);
+                json.forEach(function (element) {
+                    correct += parseInt(element.correct);
+                    total += parseInt(element.correct) + parseInt(element.incorrect);
+                });
+
+                correct += " | " + (round(correct/total,2) * 100) + "%";
+
+                $("#stats_questions_answered span").html(total);
+                $("#stats_correct span").html(correct);
+                $("#stats_top_category span").html(top_cat);
+                $("#stats_worst_category span").html(worst_cat);
+
+            }else{
+                alert.error("No JSON Data Returned");
+            }
+
+        });
+    }
+    
+    function closeStats(){
+        $("#menu").show();
+        $("#stats").hide();
     }
 
     function init(){
