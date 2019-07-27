@@ -113,7 +113,7 @@ if(!isset($_COOKIE['theme'])){
         </footer>
     </div>
     <script src="jquery.min.js"></script>
-    <script src="questions.min.js?version=1"></script>
+    <script src="questions.min.js?version=2"></script>
     <script src="master.min.js"></script>
 </body>
 </html>

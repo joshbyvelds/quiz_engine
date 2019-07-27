@@ -1,4 +1,4 @@
-// Current Version 1;
+// Current Version 2;
 var question_categorys = [
     "Rights and Responsibilities of Citizenship"
 ];
