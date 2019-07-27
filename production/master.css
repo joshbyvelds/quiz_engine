@@ -230,6 +230,9 @@ div.login input:focus + label {
   color: #fff;
   background-color: #0f5e19;
 }
+.quiz_ui button.answer.selected {
+  background-color: #dad049;
+}
 .quiz_ui button.next {
   display: block;
   width: 100%;

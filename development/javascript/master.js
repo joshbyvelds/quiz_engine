@@ -91,7 +91,7 @@
         }
 
         // shuffle the buttons
-        $(".answer").removeClass("correct").removeClass("wrong").removeClass("show_correct").removeAttr("disabled","disabled").css("opacity", 1).shuffle().off().on('click', function(){checkAnswer($(this));});
+        $(".answer").removeClass("selected").removeClass("correct").removeClass("wrong").removeClass("show_correct").removeAttr("disabled","disabled").css("opacity", 1).shuffle().off().on('click', function(){checkAnswer($(this));});
 
         // update question counter..
         current_question_counter++;
@@ -104,6 +104,10 @@
 
         // turn off buttons..
         $(".answer").off();
+
+        if(!showFeedback) {
+            btn.addClass("selected");
+        }
 
         $.post("/post.php", {"key":"question", "question":current_question.ID, "answer":answer_id, "correct":(answer_id === correct)}, function(){
             // check if answer is correct..

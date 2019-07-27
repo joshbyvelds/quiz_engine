@@ -41,6 +41,10 @@
             background-color: #0f5e19;
         }
 
+        &.selected{
+            background-color: #dad049;
+        }
+
         &:hover{
             //border: solid 2px #00a6ff;
         }
