@@ -182,20 +182,39 @@
             var json;
             var correct = 0;
             var total = 0;
+            var top_question = "N/A";
+            var top_question_percent = 0;
+            var worst_question = "N/A";
+            var worst_question_percent = 101;
             var top_cat = "N/A";
             var worst_cat = "N/A";
+
+            var question_percent;
 
             if(j){
                 json = JSON.parse(j);
                 json.forEach(function (element) {
                     correct += parseInt(element.correct);
                     total += parseInt(element.correct) + parseInt(element.incorrect);
+                    question_percent = (parseInt(element.correct) / (parseInt(element.correct) + parseInt(element.incorrect) * 100));
+
+                    if(question_percent >  top_question_percent){
+                        top_question_percent = question_percent;
+                        top_question = QUESTIONS[parseInt(element.question)].Question;
+                    }
+
+                    if(question_percent <  worst_question_percent){
+                        worst_question_percent = question_percent;
+                        worst_question = QUESTIONS[parseInt(element.question)].Question;
+                    }
                 });
 
                 correct += " | " + (round(correct/total,2) * 100) + "%";
 
                 $("#stats_questions_answered span").html(total);
                 $("#stats_correct span").html(correct);
+                $("#stats_top_question span").html(top_question);
+                $("#stats_worst_question span").html(worst_question);
                 $("#stats_top_category span").html(top_cat);
                 $("#stats_worst_category span").html(worst_cat);
 

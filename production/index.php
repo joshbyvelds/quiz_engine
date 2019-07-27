@@ -79,10 +79,13 @@ if(!isset($_COOKIE['theme'])){
             </div>
 
             <div class="stats_wrapper" id="stats">
-                <div id="stats_correct">Questions Correct: <span></span></div>
-                <div id="stats_questions_answered">Questions Answered:<span></span></div>
-                <div id="stats_top_category">Top Category: <span></span></div>
-                <div id="stats_worst_category">Worst Category: <span></span></div>
+                <h2>STATS</h2>
+                <div id="stats_correct" class="stat"><h3>Questions Correct:</h3><span></span></div>
+                <div id="stats_questions_answered" class="stat"><h3>Questions Answered:</h3><span></span></div>
+                <div id="stats_top_question" class="stat"><h3>Top Question:</h3> <span></span></div>
+                <div id="stats_worst_question" class="stat"><h3>Worst Question:</h3> <span></span></div>
+                <div id="stats_top_category" class="stat"><h3>Top Category:</h3> <span></span></div>
+                <div id="stats_worst_category" class="stat"><h3>Worst Category:</h3> <span></span></div>
 
                 <button id="stats_back" class="stats_back_btn">Back to Menu</button>
             </div>
