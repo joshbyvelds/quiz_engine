@@ -1,23 +1,26 @@
 (function($){
     var questions = QUESTIONS;
     var available_questions;
-    var question_max = 5;
+    var question_max = 0;
     var current_question_counter;
     var second_chance;
     var questions_correct;
     var current_mode;
 
+    var question_max_internal;
+
     function reset(){
         questions_correct = 0;
         available_questions = questions.slice(0);
         current_question_counter = 0;
+        question_max_internal = (question_max === 0) ? available_questions.length : question_max;
     }
 
     function showFinalResults(){
         // update results panel with game results..
         $("#result_correct").text(Number.parseFloat(questions_correct / 10).toFixed(1));
-        $("#result_total").text(question_max);
-        $("#result_percent").text((((questions_correct / 10) / question_max) * 100) + "%");
+        $("#result_total").text(question_max_internal);
+        $("#result_percent").text(round(((questions_correct / 10) / question_max_internal) * 100, 2) + "%");
 
         // add events to results buttons..
         $("#result_play_again").off().on("click", function(){
@@ -56,7 +59,7 @@
         second_chance = false;
 
         // Check if we reached the max amount of questions..
-        if(current_question_counter === question_max){
+        if(current_question_counter === question_max_internal){
             showFinalResults();
         }
 
@@ -77,7 +80,7 @@
         }
 
         // shuffle the buttons
-        $(".answer").removeClass("correct").removeClass("wrong").removeAttr("disabled","disabled").css("opacity", 1).shuffle().off().on('click', function(){checkAnswer($(this));});
+        $(".answer").removeClass("correct").removeClass("wrong").removeClass("show_correct").removeAttr("disabled","disabled").css("opacity", 1).shuffle().off().on('click', function(){checkAnswer($(this));});
 
         // update question counter..
         current_question_counter++;
@@ -91,7 +94,7 @@
         // turn off buttons..
         $(".answer").off();
 
-        $.post("/post", {"key":"question", "question":current_question.ID, "answer":answer_id, "correct":(answer_id === correct)}, function(){
+        $.post("/post.php", {"key":"question", "question":current_question.ID, "answer":answer_id, "correct":(answer_id === correct)}, function(){
             // check if answer is correct..
             if (answer_id === correct) {
                 // update game stats
@@ -125,7 +128,8 @@
                     });
                     $(btn).off();
                 } else {
-                    $("#feedback_text").html("Incorrect");
+                    $("#feedback_text").html("The correct answer has the dark green background.");
+                    $(".answer[data-answer-id="+ correct +"]").addClass("show_correct");
                     $("#next_btn").show().off().on("click", loadQuestion);
                 }
             }
@@ -139,7 +143,7 @@
         reset();
         $("#menu").hide();
         $("#quiz").show();
-        $("#question_total").text(question_max);
+        $("#question_total").text(question_max_internal);
 
         loadQuestion();
     }
@@ -201,6 +205,11 @@
         return $(shuffled);
 
     };
-}(jQuery));
 
+    // Ultility Functions..
+    function round(value, decimals) {
+        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    }
+
+}(jQuery));
 

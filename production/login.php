@@ -18,7 +18,7 @@
         $password = $_POST['password'];
     }
 
-    //echo password_hash($password, PASSWORD_DEFAULT);
+    // echo password_hash($password, PASSWORD_DEFAULT);
 
     // Check if user exists and if passwords match..
     if($submit && $username && $password){

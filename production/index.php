@@ -8,7 +8,7 @@ $username = $_SESSION['username'];
 
 //if user is not logged in, boot em out and show them the login page
 if(!$loggedIn){
-    header("Location: /login");
+    header("Location: /login.php");
 }
 
 // check what theme is saved..
@@ -43,7 +43,7 @@ if(!isset($_COOKIE['theme'])){
         </header>
         <main>
             <div class="menu" id="menu">
-                <h2>Welcome, <?php echo $username ?></h2>
+                <h2>Welcome, <?php echo ucfirst($username) ?></h2>
 
                 <button class="game_start_btn" data-mode="1">Mode 1 - Learning</button>
                 <button class="game_start_btn" data-mode="2" disabled>Mode 2 - Wrong Answer Improvement</button>
@@ -88,7 +88,7 @@ if(!isset($_COOKIE['theme'])){
         <footer>
             <ul>
 <!--                <li>--><?php //if($theme === "light"){echo "<a href=\"/?theme=dark\">Dark Mode</a>";}else{echo "<a href=\"/?theme=light\">Light Mode</a>";} ?><!--</li>-->
-                <li><a href="/Logout">Logout</a></li>
+                <li><a href="/logout.php">Logout</a></li>
             </ul>
             <p>&copy; 2019 - Byvelds Multimedia - Ver 1.0</p>
         </footer>

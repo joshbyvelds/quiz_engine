@@ -73,7 +73,7 @@ header {
   text-align: center;
 }
 header h1 {
-  font-size: 50px;
+  font-size: 26px;
 }
 header h3 {
   font-size: 32px;
@@ -181,6 +181,7 @@ div.login input:focus + label {
 .menu h2 {
   padding-bottom: 40px;
   font-size: 32px;
+  text-decoration: ca;
 }
 .menu button {
   display: block;
@@ -198,11 +199,12 @@ div.login input:focus + label {
 }
 .quiz_ui .counter {
   padding-bottom: 16px;
-  font-size: 32px;
+  font-size: 16px;
 }
 .quiz_ui .question_text {
-  font-size: 21px;
+  font-size: 28px;
   padding-bottom: 10px;
+  font-weight: 400;
 }
 .quiz_ui button.answer {
   display: block;
@@ -211,16 +213,22 @@ div.login input:focus + label {
   border: 0;
   margin: 5px 0;
   padding: 16px 0;
-  background-color: #00c5ff;
+  background-color: #74dbff;
   border-radius: 16px;
   font-size: 16px;
+  font-weight: 700;
 }
 .quiz_ui button.answer.correct {
-  background-color: #00AA00;
+  background-color: #5ccd56;
 }
 .quiz_ui button.answer.wrong {
-  background-color: #AA0000;
+  color: #fff;
+  background-color: #a72520;
   text-decoration: line-through;
+}
+.quiz_ui button.answer.show_correct {
+  color: #fff;
+  background-color: #0f5e19;
 }
 .quiz_ui button.next {
   display: block;
@@ -229,7 +237,7 @@ div.login input:focus + label {
   border: 0;
   margin: 5px 0;
   padding: 16px 0;
-  background-color: #f59bff;
+  background-color: #ffbef8;
   font-size: 16px;
   border-radius: 16px;
 }
