@@ -1,7 +1,10 @@
 // Current Version 3;
 var question_categorys = [
     "Unknown",
-    "Rights and Responsibilities of Citizenship"
+    "Rights and Responsibilities of Citizenship",
+    "Government Positions (Federal)",
+    "Government Positions (Provincial)",
+    "Government Positions (Local)"
 ];
 
 var QUESTIONS = [
@@ -505,6 +508,232 @@ var QUESTIONS = [
         ],
         "Correct": 0,
     },
+
+    {
+        "ID": 39,
+        "Category": 2,
+        "Question": "Who is Canada\'s head of state?",
+        "Answers": [
+            "Queen Elizabeth II",
+            "Steven Harper",
+            "Justin Trudeau",
+            "Julie Payette",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 40,
+        "Category": 2,
+        "Question": "The name of the representative of the Queen of Canada, the Governor General, is?",
+        "Answers": [
+            "Julie Payette",
+            "Georges Vanier",
+            "Michaëlle Jean",
+            "Adrienne Clarkson",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 41,
+        "Category": 2,
+        "Question": "The Head of Government, the Prime Minister, is?",
+        "Answers": [
+            "Justin Trudeau",
+            "Steven Harper",
+            "Andrew Scheer",
+            "Jagmeet Singh",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 42,
+        "Category": 2,
+        "Question": "The name of the political party in power is?",
+        "Answers": [
+            "Conservative",
+            "Liberal",
+            "New Democratic Party",
+            "Green",
+        ],
+        "Correct": 1,
+    },
+
+    {
+        "ID": 43,
+        "Category": 2,
+        "Question": "The name of the Leader of the Opposition is?",
+        "Answers": [
+            "Andrew Scheer",
+            "Jagmeet Singh",
+            "Yves-François Blanchet",
+            "Elizabeth May",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 44,
+        "Category": 2,
+        "Question": "The name of the party representing Her Majesty’s Loyal Opposition is?",
+        "Answers": [
+            "Conservative",
+            "Bloc Québécois",
+            "New Democratic Party",
+            "Green",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 45,
+        "Category": 2,
+        "Question": "Who is NOT a real opposition party / leader?",
+        "Answers": [
+            "Conservative (Andrew Scheer)",
+            "Bloc Québécois(Yves-François Blanchet)",
+            "New Democratic Party (Jagmeet Singh)",
+            "Green (Elizabeth May)",
+            "Canadian Communist Party (Alexi Volkoff)"
+        ],
+        "Correct": 3,
+    },
+
+    {
+        "ID": 46,
+        "Category": 2,
+        "Question": "My member of Parliament (MP) in Ottawa is?",
+        "Answers": [
+            "Anita Vandenbeld",
+            "Arif Virani",
+            "David McGuinty",
+            "Mona Fortier",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 47,
+        "Category": 2,
+        "Question": "My federal electoral district is called?",
+        "Answers": [
+            "Ottawa West—Nepean",
+            "Ottawa Centre",
+            "Ottawa South",
+            "Ottawa—Vanier",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 48,
+        "Category": 5,
+        "Question": "The name of the head of the municipal government (mayor or reeve) is?",
+        "Answers": [
+            "Jim Watson",
+            "Eddie Edwards",
+            "Anita Vandenbeld",
+            "Doug Ford",
+        ],
+        "Correct": 0,
+    },
+
+
+    {
+        "ID": 49,
+        "Category": 4,
+        "Question": "The representative of the Queen in my province, the Lieutenant Governor, is?",
+        "Answers": [
+            "Elizabeth Dowdeswell",
+            "Henry William Stisted",
+            "Hillary Mary Weston",
+            "David Charles Onley",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 50,
+        "Category": 4,
+        "Question": "The Head of Government (the Premier) is?",
+        "Answers": [
+            "Doug Ford",
+            "Justin Trudeau",
+            "Elizabeth Dowdeswell",
+            "Anita Vandenbeld",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 51,
+        "Category": 5,
+        "Question": "The name of the municipality where I live is?",
+        "Answers": [
+            "City of Ottawa",
+            "North Dundas",
+            "Toronto",
+            "Ontario",
+        ],
+        "Correct": 0,
+    },
+
+
+    {
+        "ID": 52,
+        "Category": 4,
+        "Question": "The name of the provincial party in power is?",
+        "Answers": [
+            "Conservative",
+            "Liberal",
+            "New Democratic Party",
+            "Green",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 53,
+        "Category": 4,
+        "Question": "Who is NOT a real provincial opposition party / leader",
+        "Answers": [
+            "Green Party of Ontario (Mike Schreiner)",
+            "Ontario New Democratic Party (Andrea Horwath)",
+            "Ontario Liberal Party (John Fraser)",
+            "Ontatio Nazi Party (Bill Edwards)",
+        ],
+        "Correct": 3,
+    },
+
+
+    {
+        "ID": 54,
+        "Category": 4,
+        "Question": "My provincial representative is?",
+        "Answers": [
+            "Jeremy Roberts (PC)",
+            "Sara Singh (NDP)",
+            "Sam Oosterhoff (PC)",
+            "John Fraser (LIB)",
+        ],
+        "Correct": 0,
+    },
+
+    {
+        "ID": 55,
+        "Category": 5,
+        "Question": "The name of the Commissioner, who represents the federal government in my territory, is?",
+        "Answers": [
+            "Jeremy Roberts",
+            "Doug Ford",
+            "Justin Trudeau",
+            "N/A - Ontario does not have one",
+        ],
+        "Correct": 3,
+    },
+
 
     // {
     //     "ID": #,
