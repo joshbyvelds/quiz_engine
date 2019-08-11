@@ -60,6 +60,7 @@ if(!isset($_COOKIE['theme'])){
                 <button class="answer" id="answer2"></button>
                 <button class="answer" id="answer3"></button>
                 <button class="answer" id="answer4"></button>
+                <button class="answer" id="answer5"></button>
 
                 <div class="feedback" id="feedback">
                     <div class="icon" id="feedback_icon"></div>

@@ -491,7 +491,7 @@ var QUESTIONS = [
             "Citizenship and Foreign Policy",
             "Health and Education",
             "Defense and Currency",
-            "Criminal Law and Interprovincial Trade,
+            "Criminal Law and Interprovincial Trade",
         ],
         "Correct": 1,
     },
@@ -598,7 +598,7 @@ var QUESTIONS = [
             "Green (Elizabeth May)",
             "Canadian Communist Party (Alexi Volkoff)"
         ],
-        "Correct": 3,
+        "Correct": 4,
     },
 
     {
