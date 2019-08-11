@@ -590,20 +590,6 @@ var QUESTIONS = [
     {
         "ID": 45,
         "Category": 2,
-        "Question": "Who is NOT a real opposition party / leader?",
-        "Answers": [
-            "Conservative (Andrew Scheer)",
-            "Bloc Québécois(Yves-François Blanchet)",
-            "New Democratic Party (Jagmeet Singh)",
-            "Green (Elizabeth May)",
-            "Canadian Communist Party (Alexi Volkoff)"
-        ],
-        "Correct": 4,
-    },
-
-    {
-        "ID": 46,
-        "Category": 2,
         "Question": "My member of Parliament (MP) in Ottawa is?",
         "Answers": [
             "Anita Vandenbeld",
@@ -615,7 +601,7 @@ var QUESTIONS = [
     },
 
     {
-        "ID": 47,
+        "ID": 46,
         "Category": 2,
         "Question": "My federal electoral district is called?",
         "Answers": [
@@ -628,7 +614,7 @@ var QUESTIONS = [
     },
 
     {
-        "ID": 48,
+        "ID": 47,
         "Category": 5,
         "Question": "The name of the head of the municipal government (mayor or reeve) is?",
         "Answers": [
@@ -642,7 +628,7 @@ var QUESTIONS = [
 
 
     {
-        "ID": 49,
+        "ID": 48,
         "Category": 4,
         "Question": "The representative of the Queen in my province, the Lieutenant Governor, is?",
         "Answers": [
@@ -655,7 +641,7 @@ var QUESTIONS = [
     },
 
     {
-        "ID": 50,
+        "ID": 49,
         "Category": 4,
         "Question": "The Head of Government (the Premier) is?",
         "Answers": [
@@ -668,7 +654,7 @@ var QUESTIONS = [
     },
 
     {
-        "ID": 51,
+        "ID": 50,
         "Category": 5,
         "Question": "The name of the municipality where I live is?",
         "Answers": [
@@ -682,7 +668,7 @@ var QUESTIONS = [
 
 
     {
-        "ID": 52,
+        "ID": 51,
         "Category": 4,
         "Question": "The name of the provincial party in power is?",
         "Answers": [
@@ -695,21 +681,7 @@ var QUESTIONS = [
     },
 
     {
-        "ID": 53,
-        "Category": 4,
-        "Question": "Who is NOT a real provincial opposition party / leader",
-        "Answers": [
-            "Green Party of Ontario (Mike Schreiner)",
-            "Ontario New Democratic Party (Andrea Horwath)",
-            "Ontario Liberal Party (John Fraser)",
-            "Ontatio Nazi Party (Bill Edwards)",
-        ],
-        "Correct": 3,
-    },
-
-
-    {
-        "ID": 54,
+        "ID": 52,
         "Category": 4,
         "Question": "My provincial representative is?",
         "Answers": [
@@ -722,7 +694,7 @@ var QUESTIONS = [
     },
 
     {
-        "ID": 55,
+        "ID": 53,
         "Category": 5,
         "Question": "The name of the Commissioner, who represents the federal government in my territory, is?",
         "Answers": [
